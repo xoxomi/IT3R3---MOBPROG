@@ -45,6 +45,7 @@ const SignUpScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Create an Account</Text>
+      
       <View style={styles.labelContainer}>
         <Text style={styles.label}>Full Name</Text>
         <TextInput
@@ -92,25 +93,34 @@ const SignUpScreen = ({ navigation }) => {
           secureTextEntry={true}
         />
       </View>
-      <View style={styles.buttonContainer}>
-  <Button
-    title="Sign Up"
-    onPress={handleSignUp}
-    
-  />
-  <Button
-    title="Cancel"
-    onPress={() => navigation.navigate('Login')}
-    
-  />
-</View>
-      <View style={styles.labelButtonContainer}>
-      <Text style={[styles.label, { width: 700 }]}>ALREADY HAVE AN ACCOUNT?</Text>
+      <View style={{}}>
         <Button
-          title="Log In"
-          onPress={() => navigation.navigate('Login')} color="black"
-        />
+          title="Sign Up"
+          color="lightblue"
+          onPress={handleSignUp}/>
+        <Button
+          title="Cancel"
+          color="lightslategrey"
+          
+          onPress={() => navigation.navigate('Login')}/>
       </View>
+      <View style={styles.labelButtonContainer}>
+        <View style={{  }}>
+           <Text style={[styles.label]}>
+           ALREADY HAVE AN ACCOUNT?
+         </Text>
+       </View>
+  <View>
+    <Button
+      title="Log In"
+      onPress={() => navigation.navigate('Login')}
+      color="deepskyblue"
+    />
+  </View>
+</View>
+
+      
+
     </View>
   );
 };

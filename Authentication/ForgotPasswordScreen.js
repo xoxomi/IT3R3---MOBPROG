@@ -17,6 +17,12 @@ const ForgotPasswordScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+    <View style={styles.shapeContainer}>
+        <View style={styles.circle}>
+          <Text style={styles.headerText}>Degree Deals</Text>
+        </View>
+      </View>
+        
       <Text style={styles.title}>Email</Text>
       <TextInput
         style={styles.input}
@@ -46,11 +52,21 @@ const ForgotPasswordScreen = ({ navigation }) => {
           Follow the instructions to reset your password.
         </Text>
       </View>
-      <Button title="Reset Password" onPress={handleForgotPassword} />
-      <Button
-        title="Back to Login"
-        onPress={() => navigation.navigate('Login')}
-      />
+      <View style={{ width: 350, height: 35 , marginVertical: 8,}}>
+       <Button
+          title="Reset Password"
+          onPress={handleForgotPassword}
+          color="lightblue"
+          style={styles.button}/>
+      </View>
+
+      <View style={{ width: 350, height: 38, marginVertical: 8,  }}>
+        <Button
+          title="Back to Login"
+          onPress={() => navigation.navigate('Login')}
+          color="lightslategrey"
+          style={styles.button}/>
+      </View>
     </View>
   );
 };

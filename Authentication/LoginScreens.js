@@ -4,7 +4,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles';
 
 
-
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +31,13 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={{ width: 358,flex: 1, justifyContent: 'center', }} >
+      <View style={styles.shapeContainer}>
+        <View style={styles.circle}>
+          <Text style={styles.headerText}>Degree Deals</Text>
+        </View>
+      </View>
+      
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
@@ -40,6 +45,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={(text) => setUsername(text)}
         value={username}
       />
+      <Text style={styles.title}>Password</Text>
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -47,14 +53,14 @@ const LoginScreen = ({ navigation }) => {
         value={password}
         secureTextEntry={true}
       />
-      <Button title="Login" onPress={handleLogin} />
-      <Button
+      <Button title="Login" onPress={handleLogin} color="lightblue" /> 
+      <Button 
         title="Sign Up"
-        onPress={() => navigation.navigate('Degree Deals')}
+        onPress={() => navigation.navigate('Degree Deals')} color="lightblue" 
       />
       <Button
         title="Forgot Password"
-        onPress={() => navigation.navigate('Forgot Password')}
+        onPress={() => navigation.navigate('Forgot Password')} color="lightslategrey" 
       />
     </View>
   );
